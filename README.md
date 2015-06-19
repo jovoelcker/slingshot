@@ -12,3 +12,5 @@ You can just drop the Player-Prefab into your scene and you can rotate and shoot
 Snap the imaginary sling with the left mouse key and just release it. If you do everything right, the scripts will spawn a stone, that smashes every Rigid Body and opens the Hit-method for every object with trigger-collider.
 
 Have Fun!!!
+
+P.S.: You have to wear the Myos with the USB-Port towards the wrist...
