@@ -17,6 +17,6 @@ public class LeftArmOrientation : MonoBehaviour
 	// If the Myo is available, adjust the height
 	void Update() {
 		if (myoManager.leftMyo != null)
-			transform.localRotation = new Quaternion(myoManager.leftMyo.transform.rotation.x, transform.localRotation.y, transform.localRotation.z, transform.localRotation.w);
+			transform.localRotation = new Quaternion(-myoManager.leftMyo.transform.rotation.z, transform.localRotation.y, transform.localRotation.z, transform.localRotation.w);
 	}
 }
