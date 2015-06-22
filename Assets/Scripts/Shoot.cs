@@ -77,4 +77,8 @@ public class Shoot : MonoBehaviour {
 	public float GetDistance() {
 		return Vector3.Distance(slingshotMiddle.position, rightHand.position);
 	}
+
+	public bool WasSnapped() {
+		return wasSnapped;
+	}
 }
