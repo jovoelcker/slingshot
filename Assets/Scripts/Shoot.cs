@@ -9,7 +9,8 @@ public class Shoot : MonoBehaviour {
 	public Transform slingshotMiddle;
 
 	// Maximum of the stones startVelocity in m/s
-	public float maxVelocity = 25f;
+	public float minVelocity = 13000f;
+	public float maxVelocity = 30000f;
 
 	// Shooting-sound of the slingshot
 	AudioSource shootSound;
@@ -55,7 +56,7 @@ public class Shoot : MonoBehaviour {
 			// Update the state for the trajectory-calculation
 			currentOrientation = slingshotMiddle.position - rightHand.position;
 			currentPosition = slingshotMiddle.position;
-			currentVelocity = t * maxVelocity;
+			currentVelocity = Mathf.Lerp(minVelocity, maxVelocity, t);;
 			
 			// The sling was just released
 			if (!isSnapped) {
