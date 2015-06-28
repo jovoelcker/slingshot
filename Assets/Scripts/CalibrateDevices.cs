@@ -9,6 +9,8 @@ public class CalibrateDevices : MonoBehaviour
 	// The Myo-Wrapper which have to be calibrated
 	public MyoOrientation leftMyoOrientation = null;
 	public MyoOrientation rightMyoOrientation = null;
+	public Transform mainCameraWrapper = null;
+	public Camera mainCamera = null;
 
 	// The Myos themselves
 	private ThalmicMyo leftMyo = null;
@@ -38,6 +40,11 @@ public class CalibrateDevices : MonoBehaviour
 			
 			if (rightMyo != null) {
 				CalibrateMyo(rightMyo, rightMyoOrientation);
+			}
+
+			// The wrapper inverts the cameras rotation
+			if (mainCamera != null && mainCameraWrapper != null) {
+				mainCameraWrapper.transform.localRotation = Quaternion.Inverse(mainCamera.transform.localRotation) * new Quaternion(0, 180, 0, 1);
 			}
 		}
 	}
